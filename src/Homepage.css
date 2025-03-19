@@ -1,0 +1,79 @@
+/* Main Section */
+.hero-section {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+/* Title Styling */
+.hero-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #4CAF50;
+    margin-bottom: 20px;
+}
+
+/* Flexbox to Align Text & Image Side by Side */
+.content-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    max-width: 1200px;
+    margin: auto;
+    text-align: left;
+}
+
+/* Text Styling */
+.hero-text {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #333;
+    max-width: 50%;
+}
+
+/* Image Slider */
+.image-slider {
+    width: 50%;
+    max-width: 500px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Image Styling */
+.slider-img {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .content-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-text {
+        max-width: 100%;
+    }
+
+    .image-slider {
+        width: 100%;
+    }
+
+    .slider-img {
+        max-height: 250px;
+    }
+}
+
+/* Styling for Dots */
+.slick-dots li button:before {
+    color: #4CAF50 !important;
+}
+
+.slick-dots li.slick-active button:before {
+    color: #2c7b32 !important;
+}

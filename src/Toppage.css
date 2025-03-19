@@ -1,0 +1,217 @@
+.top-elements {
+    width: 100%;
+    background-color: #f1f7f3;
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 10px 20px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 115px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Ensure content starts below the header */
+body {
+    margin: 0;
+    padding-top: 100px;
+}
+
+/* Logo Styling */
+.page-logo {
+    max-width: 40%;
+    height: auto;
+    margin-left: 10px;
+}
+
+/* Line-by-line animation for each element */
+.top-elements h1,
+.top-elements p,
+.top-elements button {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideIn 0.5s ease forwards;
+}
+
+.top-elements img {
+    animation: fadeIn 0.5s ease-in-out forwards;
+    animation-delay: 0.5s;
+}
+
+/* Define animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Delayed animations for staggered effect */
+.top-elements h1 {
+    animation-delay: 0.1s;
+}
+
+.top-elements p {
+    animation-delay: 0.3s;
+}
+
+/* Button styling with animation */
+.top-elements button {
+    margin-top: 10px;
+    padding: 8px 16px;
+    background-color: #68af4c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    animation-delay: 0.5s;
+    margin: 0 10px;
+}
+
+.top-elements button:hover {
+    background-color: #45a049;
+    color: white;
+}
+
+/* Search bar styling with animations */
+.search-bar {
+    padding: 8px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 250px;
+    opacity: 0;
+    transform: translateY(-10px);
+    animation: fadeSlideIn 0.5s ease-in-out forwards;
+    animation-delay: 0.3s;
+}
+
+/* Dropdown styling with hover effects */
+.category-dropdown {
+    padding: 8px;
+    margin: 10px;
+    border-radius: 5px;
+    background-color: #68af4c;
+    color: whitesmoke;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+    opacity: 0;
+    transform: translateY(-10px);
+    animation: fadeSlideIn 0.5s ease-in-out forwards;
+    animation-delay: 0.5s;
+}
+
+.category-dropdown:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+/* Styling dropdown options */
+.category-dropdown select {
+    appearance: none;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 16px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+/* Dropdown option styling */
+.category-dropdown option {
+    background-color: wheat;
+    color: black;
+    padding: 10px;
+}
+
+.category-dropdown option:hover {
+    background-color: white;
+    color: black;
+    transform: scale(1.05);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Highlight selected option */
+.category-dropdown option:checked {
+    background-color: wheat;
+    color: black;
+}
+
+/* Cart button styling */
+.cart-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.cart-button:hover {
+    background-color: #45a049;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .top-elements {
+        flex-wrap: wrap;
+        justify-content: center;
+        height: auto;
+        padding: 10px;
+    }
+
+    .page-logo {
+        max-width: 200px;
+        margin-bottom: 10px;
+    }
+
+    .search-bar {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .category-dropdown {
+        width: 100%;
+    }
+
+    .cart-button {
+        width: 100%;
+    }
+}
+
+/* Animation for search bar and dropdown */
+@keyframes fadeSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Hover effect for search and dropdown */
+.search-bar:hover,
+.category-dropdown:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+}
